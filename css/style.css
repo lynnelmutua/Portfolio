@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+/* === 1. RESET & BOX-SIZING === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === 2. CUSTOM DESIGN (PERSONALIZED) === */
+:root {
+  --clr-primary:  #6C2BD9;   /* Purple theme */
+  --clr-accent:   #FF6B6B;   /* Coral accent */
+  --clr-text:     #222222;
+  --clr-muted:    #6B7280;
+  --clr-bg:       #F9FAFB;
+  --clr-white:    #FFFFFF;
+  --clr-border:   #E5E7EB;
+  --radius:       14px;
+  --shadow:       0 4px 18px rgba(0,0,0,0.08);
+  --max-width:    1100px;
+}
+
+/* === 3. TYPOGRAPHY === */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--clr-text);
+  background: var(--clr-bg);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+h3 { font-size: 1.2rem; }
+
+a { color: var(--clr-primary); text-decoration: none; }
+
+/* === 4. CONTAINER === */
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+/* === 5. HEADER === */
+header {
+  background: var(--clr-primary);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+/* === NAV === */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--clr-accent);
+}
+
+/* === HERO === */
+.hero {
+  background: linear-gradient(135deg, #6C2BD9, #9333EA);
+  color: white;
+  padding: 5rem 1.5rem;
+  text-align: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+/* === BUTTONS === */
+.btn {
+  background: var(--clr-accent);
+  padding: 0.7rem 1.8rem;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* === CARDS === */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--clr-primary);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 3rem;
+}
+/* === 13. RESPONSIVE MEDIA QUERIES === */
+
+/* Tablet and above — 768px+ */
+@media (min-width: 768px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Slightly wider sidebar */
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .hero {
+    padding: 7rem 2rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Desktop — 1024px+ */
+@media (min-width: 1024px) {
+  /* Keeps a clean 3-column layout */
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Large Desktop — 1200px+ */
+@media (min-width: 1200px) {
+  .hero {
+    padding: 8rem 2rem;
+  }
+
+  .cards {
+    gap: 2rem;
+  }
+}
+
+/* Mobile — 599px and below */
+@media (max-width: 599px) {
+  header .container {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.4rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  /* Center profile / aside content */
+  aside {
+    text-align: center;
+  }
+}
+
+/* Print — clean CV/portfolio export */
+@media print {
+  header,
+  footer,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    font-size: 11pt;
+    background: white;
+    color: black;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  h2 {
+    border-left: 3px solid black;
+    padding-left: 0.5rem;
+  }
+}

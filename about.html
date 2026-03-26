@@ -1,0 +1,93 @@
+<!-- Paste this into EVERY HTML file and customise the <title> and <main> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- REQUIRED for responsive design on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Lynnel Mutua — Computing student at [University]">
+  <title>Lynnel Mutua | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Skip link: allows keyboard users to skip the nav -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Lynnel Mutua</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <!-- Add class="active" to the current page's link -->
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- PAGE-SPECIFIC CONTENT GOES HERE -->
+     <section class="about-section">
+  <div class="container about-grid">
+
+    <aside>
+      <img src="images/profile.jpg" 
+           alt="Lynnel Mutua — profile photo" 
+           class="profile-img">
+      <p class="profile-name">Lynnel Mutua</p>
+      <p class="role">Computing Student, Year 2</p>
+    </aside>
+
+    <div>
+      <h1>About Me</h1>
+      <p>I am a dedicated Computing student with a strong interest in how data travels across the globe and how we interact with it through the web. My goal is to bridge the gap between complex network infrastructure and user-friendly web interfaces.</p>
+      
+      <p>Currently, I am focused on mastering front-end development and deepening my understanding of network security and diagnostics, as demonstrated in my recent laboratory work.</p>
+
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li>Computer Networking (OSI, TCP/IP, IP Addressing)</li>
+        <li>Network Diagnostics (CMD, Ping, Tracert)</li>
+        <li>Web Development (HTML5 & CSS3)</li>
+        <li>Problem Solving & System Analysis</li>
+      </ul>
+
+      <h3>Education</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Qualification</th>
+            <th>Institution</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BSc Computing</td>
+            <td>JKUAT</td>
+            <td>2024–Present</td>
+          </tr>
+          <tr>
+            <td>KCSE</td>
+            <td>Kenya High School</td>
+            <td>2023</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Lynnel Mutua — ICS 2215, Dept. of Computing</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
